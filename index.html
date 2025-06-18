@@ -1,0 +1,1597 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solyum - Risol Kekinian</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar">
+        <div class="navbar-logo">
+            <img src="gambar/logo1.png" alt="Solyum Logo">
+        </div>
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#menu">Menu</a>
+            <a href="#testimoni">Testimoni</a>
+            <a href="#kontak">Kontak</a>
+        </div>
+        <div class="cart-icon" id="cart-toggle">
+            <img src="gambar/cart.png" alt="Cart Icon">
+            <span class="cart-count">0</span>
+        </div>
+    </nav>
+
+    <div id="cart-preview" class="cart-preview">
+        <div class="cart-preview-content">
+            <h3>Keranjang Belanja</h3>
+            <div class="cart-items"></div>
+            <p>Total: Rp<span class="cart-total">0</span></p>
+            <button class="checkout-btn">Checkout via WhatsApp</button>
+            <button class="close-cart">Tutup</button>
+        </div>
+    </div>
+
+    <section id="home" class="hero-section">
+        <div class="slider">
+            <div class="slides">
+                <img class="hero-image active" src="gambar/bg1.jpeg" alt="Slide 1">
+                <img class="hero-image" src="gambar/bg2.jpeg" alt="Slide 2">
+                <img class="hero-image" src="gambar/bg3.webp" alt="Slide 3">
+            </div>
+            <div class="hero-content">
+                <h1>Selamat Datang Di Solyum!!!</h1>
+                <p>Risol kekinian dengan cita rasa modern yang bikin nagih!</p>
+                <a href="#menu" class="hero-cta">Order Sekarang!</a>
+            </div>
+            <button class="slider-prev">❮</button>
+            <button class="slider-next">❯</button>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="top-content-block">
+        <div class="top-content">
+            <img class="top-content-logo" src="gambar/logo1.png" alt="Solyum About">
+            <div class="top-content-text">
+                <h2 class="top-content-headline">Tentang Kami</h2>
+                <p>Kini hadir SOLYUM – revolusi risol masa kini yang bakal bikin lidahmu berdecak kagum! ✨ Generasi baru risol dengan isian super kekinian yang bikin nagih, mulai dari ayam suwir pedas gurih yang juara sampai coklat lumer premium yang meleleh di mulut seperti dessert bintang lima!</p>
+                <p>Gak cuma enak, SOLYUM juga punya kulit yang super renyah dan gurih, digoreng sampai golden brown perfection sehingga bikin setiap gigitan jadi pengalaman yang memuaskan. Cocok banget buat teman nongkrong, camilan kerja, atau bahkan jadi hidangan istimewa di acara spesialmu!</p>
+                <p>Jangan stuck di masa lalu—upgrade camilanmu dengan SOLYUM, risol modern yang bikin ketagihan! 🎉🔥</p>
+                <a href="#menu" class="hero-cta">Order Sekarang!</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="cara-pemesanan" class="order-steps-container">
+        <h2>Cara Pemesanan</h2>
+        <div class="order-steps">
+            <div class="step">
+                <div class="step-icon">1</div>
+                <h3>Pilih Menu</h3>
+                <p>Telusuri menu andalan kami dan pilih risol favoritmu seperti Cokmelet, Suwirlisious, atau lainnya.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">2</div>
+                <h3>Atur Jumlah</h3>
+                <p>Gunakan tombol + dan - untuk menentukan jumlah pesanan, lalu klik "Tambah ke Keranjang".</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">3</div>
+                <h3>Checkout</h3>
+                <p>Klik ikon keranjang, periksa pesananmu, lalu tekan "Checkout via WhatsApp" untuk konfirmasi.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">4</div>
+                <h3>Konfirmasi & Bayar</h3>
+                <p>Ikuti instruksi di WhatsApp untuk konfirmasi pesanan dan lakukan pembayaran.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">5</div>
+                <h3>Tunggu Pesanan</h3>
+                <p>Pesananmu akan segera diproses dan diantarkan fresh dari dapur SOLYUM!</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">6</div>
+                <h3>Pesanan Selesai Diantar</h3>
+                <p>Selamat menikmati Lezatnya Risol SOLYUM!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="categories-container">
+        <h2>Menu Andalan Kami</h2>
+        <div class="categories">
+            <div class="category">
+                <img class="product-image" src="gambar/coklat.jpeg" alt="Cokmelet">
+                <h3>Cokmelet (Risol Coklat)</h3>
+                <p>Rp7.000/pcs</p>
+                <div class="quantity-control" data-product="Cokmelet" data-price="7000">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+            <div class="category">
+                <img class="product-image" src="gambar/suwir.jpeg" alt="Suwirlisious">
+                <h3>Suwirlisious (Suwir Ayam)</h3>
+                <p>Rp5.000/pcs</p>
+                <div class="quantity-control" data-product="Suwirlisious" data-price="5000">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+            <div class="category">
+                <img class="product-image" src="gambar/mayo.jpeg" alt="MayoRolls">
+                <h3>MayoRolls (Risol Mayo)</h3>
+                <p>Rp7.000/pcs</p>
+                <div class="quantity-control" data-product="MayoRolls" data-price="7000">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+            <div class="category">
+                <img class="product-image" src="gambar/moza.jpeg" alt="Mozzroll">
+                <h3>Mozzroll (Risol Mozarella)</h3>
+                <p>Rp7.000/pcs</p>
+                <div class="quantity-control" data-product="Mozzroll" data-price="7000">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+            <div class="category">
+                <img class="product-image" src="gambar/sayur.jpeg" alt="Sayuroll">
+                <h3>Sayuroll (Risol Sayur)</h3>
+                <p>Rp5.000/pcs</p>
+                <div class="quantity-control" data-product="Sayuroll" data-price="5000">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimoni" class="testimoni-container">
+        <h2>Apa Kata Pelanggan</h2>
+        <div class="testimoni-slider">
+            <div class="testimoni-slides">
+                <div class="testimoni active">
+                    <p>"Risolnya enak banget! Cokmelet lumer di mulut, bikin pengen nambah terus!"</p>
+                    <h4>- Anita, Ciroyom</h4>
+                </div>
+                <div class="testimoni">
+                    <p>"Suwirlisious pedasnya pas, renyah di luar, lembut di dalam. Top!"</p>
+                    <h4>- Budi, Sukajadi</h4>
+                </div>
+                <div class="testimoni">
+                    <p>"Pelayanan cepat, risolnya fresh, cocok buat acara keluarga."</p>
+                    <h4>- Citra, Pasir Kaliki</h4>
+                </div>
+            </div>
+            <button class="testimoni-prev">❮</button>
+            <button class="testimoni-next">❯</button>
+            <div class="testimoni-dots">
+                <span class="testimoni-dot active"></span>
+                <span class="testimoni-dot"></span>
+                <span class="testimoni-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img class="footer-logo" src="gambar/logo1.png" alt="Solyum Logo">
+                    <p>Solyum - Risol kekinian yang bikin setiap gigitan tak terlupakan! 🚀</p>
+                    <p>Jangan lupa follow kami di:</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/share/19FNiShC2r/"><img src="gambar/fb.jpg" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/solyummyy?igsh=a3Y4MzQzejhhbnBw&utm_source=qr"><img src="gambar/ins.png" alt="Instagram"></a>
+                        <a href="https://www.tiktok.com/@solyum.id?_t=ZS-8xIjFkkM9bz&_r=1"><img src="gambar/tt.png" alt="Tiktok"></a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h3>Hubungi Kami</h3>
+                    <p>Jl. Pasir Kaliki No.179, Pamoyanan, Kec. Cicendo, Kota Bandung, Jawa Barat 40173</p>
+                    <p>📞 +62 857-9724-5180</p>
+                    <p>📧 <a href="mailto:solyumyummy@gmail.com">solyumyummy@gmail.com</a></p>
+                </div>
+                <div class="footer-form">
+                    <h3>Kirim Pesan</h3>
+                    <div class="contact-form">
+                        <input type="text" id="name" placeholder="Nama Anda">
+                        <input type="email" id="email" placeholder="Email Anda">
+                        <textarea id="message" placeholder="Pesan Anda"></textarea>
+                        <button id="submit-contact">Kirim</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Solyum!!! | Dibuat dengan ❤️ di Bandung</p>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
+
+<!-- style.css -->
+<style>
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF8DC;
+    scroll-behavior: smooth;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #FFA500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar.shrink {
+    padding: 0.5rem 2rem;
+    background-color: #FF8C00;
+}
+
+.navbar-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.navbar.shrink .navbar-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease, font-size 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ecf0f1;
+    transition: width 0.4s ease-in-out;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+.navbar-links a:hover {
+    color: #ecf0f1;
+    transform: scale(1.05);
+}
+
+.navbar.shrink .navbar-links a {
+    font-size: 14px;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.cart-icon img {
+    width: 30px;
+    height: 30px;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.navbar.shrink .cart-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e67e22;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    transition: font-size 0.3s ease, transform 0.3s ease;
+}
+
+.navbar.shrink .cart-count {
+    font-size: 10px;
+    top: -8px;
+    right: -8px;
+    padding: 1px 5px;
+}
+
+.cart-count.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Cart Preview Styling */
+.cart-preview {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+    padding: 1rem;
+    border-radius: 12px;
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.cart-preview.active {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.cart-preview-content {
+    padding: 1rem;
+}
+
+.cart-preview-content h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.cart-items {
+    margin-bottom: 1rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cart-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-preview-content p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 18px;
+    color: #fff;
+    background-color: #25D366;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #20b356;
+    transform: scale(1.05);
+}
+
+.close-cart {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.close-cart:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Notification Styling */
+.notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #27ae60;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    z-index: 300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Hero section with slider styling */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+    padding: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 18px;
+    color: #fff;
+    background-color: #e67e22;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-cta:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    filter: brightness(0.6);
+}
+
+.hero-image.active {
+    opacity: 1;
+}
+
+.slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 1.5rem;
+    cursor: pointer;
+    font-size: 28px;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.slider-prev:hover, .slider-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-prev {
+    left: 15px;
+}
+
+.slider-next {
+    right: 15px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #e67e22;
+}
+
+/* Top content block styling */
+.top-content-block {
+    background-color: #fff;
+    padding: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.top-content-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.top-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+}
+
+.top-content-logo {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-content-text {
+    flex: 1;
+    text-align: left;
+    padding: 1rem;
+}
+
+.top-content-headline {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #e67e22 50%, #3498db 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+/* Order Steps Styling */
+.order-steps-container {
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.order-steps-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.order-steps-container h2 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+}
+
+.order-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.step {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.step:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #e67e22, #3498db);
+    transition: width 0.3s ease;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #e67e22;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.step:hover .step-icon {
+    transform: scale(1.1);
+    background-color: #d35400;
+}
+
+.step h3 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.step p {
+    font-size: 16px;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+/* Categories styling */
+.categories-container {
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.categories-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.categories-container h2 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.category {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.category h3 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.category p {
+    font-size: 16px;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.quantity-btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #2980b9;
+}
+
+.quantity {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    width: 40px;
+    text-align: center;
+}
+
+.add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e67e22;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+/* Testimoni section styling */
+.testimoni-container {
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.testimoni-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.testimoni-container h2 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+}
+
+.testimoni-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimoni-slides {
+    overflow: hidden;
+}
+
+.testimoni {
+    display: none;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimoni.active {
+    display: block;
+}
+
+.testimoni p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.testimoni h4 {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.testimoni-prev, .testimoni-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+}
+
+.testimoni-prev:hover, .testimoni-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.testimoni-prev {
+    left: -50px;
+}
+
+.testimoni-next {
+    right: -50px;
+}
+
+.testimoni-dots {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.testimoni-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.testimoni-dot.active {
+    background-color: #e67e22;
+}
+
+/* Footer styling */
+footer {
+    background: linear-gradient(180deg, #FF8C00 0%, #FFA500 100%);
+    color: #fff;
+    padding: 4rem 1rem;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer-brand p {
+    font-size: 16px;
+    color: #ecf0f1;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-socials a img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a img:hover {
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+.footer-contact h3 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.footer-contact p {
+    font-size: 16px;
+    color: #ecf0f1;
+    margin: 0.5rem 0;
+}
+
+.footer-contact a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #F5DEB3;
+}
+
+.footer-form h3 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.75rem;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button {
+    padding: 0.75rem;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e67e22;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #ecf0f1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-section {
+        height: 500px;
+    }
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    .hero-content p {
+        font-size: 18px;
+    }
+    .top-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .top-content-logo {
+        width: 200px;
+        height: 200px;
+    }
+    .testimoni-prev {
+        left: 10px;
+    }
+    .testimoni-next {
+        right: 10px;
+    }
+    .cart-preview {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .navbar.shrink {
+        padding: 0.5rem 1rem;
+    }
+    .navbar-logo img {
+        width: 50px;
+        height: 50px;
+    }
+    .navbar.shrink .navbar-logo img {
+        width: 35px;
+        height: 35px;
+    }
+    .navbar-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .navbar-links a {
+        font-size: 14px;
+    }
+    .navbar.shrink .navbar-links a {
+        font-size: 12px;
+    }
+    .cart-icon img {
+        width: 24px;
+        height: 24px;
+    }
+    .navbar.shrink .cart-icon img {
+        width: 20px;
+        height: 20px;
+    }
+    .cart-count {
+        font-size: 10px;
+        padding: 1px 5px;
+    }
+    .navbar.shrink .cart-count {
+        font-size: 8px;
+        top: -6px;
+        right: -6px;
+        padding: 1px 4px;
+    }
+    .hero-section {
+        height: 400px;
+    }
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .hero-cta {
+        padding: 0.75rem 1.5rem;
+        font-size: 16px;
+    }
+    .slider-prev, .slider-next {
+        padding: 1rem;
+        font-size: 24px;
+    }
+    .categories {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .category {
+        padding: 1rem;
+    }
+    .product-image {
+        height: 140px;
+    }
+    .quantity-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    .quantity {
+        width: 35px;
+        font-size: 16px;
+    }
+    .add-to-cart {
+        font-size: 14px;
+    }
+    .testimoni-prev, .testimoni-next {
+        padding: 0.75rem;
+        font-size: 20px;
+    }
+    .testimoni p {
+        font-size: 16px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+    .footer-contact p {
+        margin: 0.75rem 0;
+    }
+    .order-steps {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 350px;
+    }
+    .hero-content h1 {
+        font-size: 24px;
+    }
+    .hero-content p {
+        font-size: 14px;
+    }
+    .hero-cta {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+    }
+    .top-content-logo {
+        width: 150px;
+        height: 150px;
+    }
+    .top-content-headline {
+        font-size: 28px;
+    }
+    .categories-container h2, .testimoni-container h2, .order-steps-container h2 {
+        font-size: 24px;
+    }
+    .categories {
+        grid-template-columns: 1fr;
+    }
+    .product-image {
+        height: 120px;
+    }
+    .testimoni p {
+        font-size: 14px;
+    }
+    .footer-logo {
+        width: 80px;
+        height: 80px;
+    }
+    .footer-socials a img {
+        width: 35px;
+        height: 35px;
+    }
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+    }
+    .order-steps {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- script.js -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Navbar Shrink on Scroll
+    const navbar = document.querySelector('#navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shrink');
+            } else {
+                navbar.classList.remove('shrink');
+            }
+        });
+    } else {
+        console.error('Navbar element not found');
+    }
+
+    // Smooth Scroll and Section Animation for Navigation
+    const navLinks = document.querySelectorAll('.navbar-links a');
+    const sections = document.querySelectorAll('section, footer');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                
+                // Add animation class to sections
+                sections.forEach(section => {
+                    section.classList.remove('visible');
+                });
+                setTimeout(() => {
+                    targetElement.classList.add('visible');
+                }, 300);
+            }
+        });
+    });
+
+    // Initial section visibility
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Hero Slider
+    const slides = document.querySelectorAll('.hero-image');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    let currentSlide = 0;
+
+    if (slides.length && dots.length && prevBtn && nextBtn) {
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                dots[i].classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                currentSlide = i;
+                showSlide(currentSlide);
+            });
+        });
+
+        setInterval(nextSlide, 5000);
+    } else {
+        console.error('Hero slider elements not found');
+    }
+
+    // Testimoni Slider
+    const testimoniSlides = document.querySelectorAll('.testimoni');
+    const testimoniDots = document.querySelectorAll('.testimoni-dot');
+    const testimoniPrev = document.querySelector('.testimoni-prev');
+    const testimoniNext = document.querySelector('.testimoni-next');
+    let currentTestimoni = 0;
+
+    if (testimoniSlides.length && testimoniDots.length && testimoniPrev && testimoniNext) {
+        function showTestimoni(index) {
+            testimoniSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                testimoniDots[i].classList.toggle('active', i === index);
+            });
+        }
+
+        function nextTestimoni() {
+            currentTestimoni = (currentTestimoni + 1) % testimoniSlides.length;
+            showTestimoni(currentTestimoni);
+        }
+
+        function prevTestimoni() {
+            currentTestimoni = (currentTestimoni - 1 + testimoniSlides.length) % testimoniSlides.length;
+            showTestimoni(currentTestimoni);
+        }
+
+        testimoniPrev.addEventListener('click', prevTestimoni);
+        testimoniNext.addEventListener('click', nextTestimoni);
+        testimoniDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                currentTestimoni = i;
+                showTestimoni(currentTestimoni);
+            });
+        });
+
+        setInterval(nextTestimoni, 7000);
+    } else {
+        console.error('Testimoni slider elements not found');
+    }
+
+    // Shopping Cart
+    const cart = [];
+    const cartToggle = document.querySelector('#cart-toggle');
+    const cartPreview = document.querySelector('#cart-preview');
+    const closeCart = document.querySelector('.close-cart');
+    const cartItemsContainer = document.querySelector('.cart-items');
+    const cartTotalElement = document.querySelector('.cart-total');
+    const cartCountElement = document.querySelector('.cart-count');
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    document.body.appendChild(notification);
+
+    if (cartToggle && cartPreview && closeCart && cartItemsContainer && cartTotalElement && cartCountElement && checkoutBtn) {
+        function updateCartUI() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let itemCount = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                itemCount += item.quantity;
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <span>${item.product} (${item.quantity} pcs)</span>
+                    <span>Rp${(item.price * item.quantity).toLocaleString()}</span>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+                setTimeout(() => {
+                    cartItem.classList.add('visible');
+                }, index * 100);
+            });
+
+            cartTotalElement.textContent = total.toLocaleString();
+            cartCountElement.textContent = itemCount;
+            cartCountElement.classList.add('pulse');
+            setTimeout(() => {
+                cartCountElement.classList.remove('pulse');
+            }, 500);
+        }
+
+        cartToggle.addEventListener('click', () => {
+            cartPreview.classList.toggle('active');
+        });
+
+        closeCart.addEventListener('click', () => {
+            cartPreview.classList.remove('active');
+        });
+
+        document.querySelectorAll('.quantity-control').forEach(control => {
+            const minusBtn = control.querySelector('.minus');
+            const plusBtn = control.querySelector('.plus');
+            const quantityElement = control.querySelector('.quantity');
+            const addToCartBtn = control.parentElement.querySelector('.add-to-cart');
+            const product = control.dataset.product;
+            const price = parseInt(control.dataset.price);
+
+            if (minusBtn && plusBtn && quantityElement && addToCartBtn && product && price) {
+                minusBtn.addEventListener('click', () => {
+                    let quantity = parseInt(quantityElement.textContent);
+                    if (quantity > 0) {
+                        quantityElement.textContent = --quantity;
+                    }
+                });
+
+                plusBtn.addEventListener('click', () => {
+                    quantityElement.textContent = parseInt(quantityElement.textContent) + 1;
+                });
+
+                addToCartBtn.addEventListener('click', () => {
+                    const quantity = parseInt(quantityElement.textContent);
+                    if (quantity > 0) {
+                        const existingItem = cart.find(item => item.product === product);
+                        if (existingItem) {
+                            existingItem.quantity += quantity;
+                        } else {
+                            cart.push({ product, quantity, price });
+                        }
+                        quantityElement.textContent = '0';
+                        updateCartUI();
+                        notification.textContent = `${product} telah ditambahkan ke keranjang!`;
+                        notification.style.display = 'block';
+                        setTimeout(() => {
+                            notification.style.display = 'none';
+                        }, 3000);
+                    }
+                });
+            } else {
+                console.error('Quantity control elements missing for product:', product);
+            }
+        });
+
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Keranjang kosong! Tambahkan produk terlebih dahulu.');
+                return;
+            }
+
+            let message = 'Pesanan Solyum:\n';
+            let total = 0;
+            cart.forEach(item => {
+                message += `${item.product}: ${item.quantity} pcs (Rp${(item.price * item.quantity).toLocaleString()})\n`;
+                total += item.price * item.quantity;
+            });
+            message += `\nTotal: Rp${total.toLocaleString()}\n`;
+            message += 'Silakan konfirmasi pesanan Anda.';
+
+            const whatsappUrl = `https://wa.me/6285797245180?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            cart.length = 0;
+            updateCartUI();
+            cartPreview.classList.remove('active');
+        });
+    } else {
+        console.error('Cart elements not found');
+    }
+
+    // Contact Form Handling
+    const submitContactBtn = document.querySelector('#submit-contact');
+    const nameInput = document.querySelector('#name');
+    const emailInput = document.querySelector('#email');
+    const messageInput = document.querySelector('#message');
+
+    if (submitContactBtn && nameInput && emailInput && messageInput) {
+        submitContactBtn.addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
+
+            if (name && email && message) {
+                const whatsappMessage = `Pesan dari ${name} (${email}):\n${message}`;
+                const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(whatsappMessage)}`;
+                window.open(whatsappUrl, '_blank');
+                nameInput.value = '';
+                emailInput.value = '';
+                messageInput.value = '';
+                alert('Pesan berhasil dikirim!');
+            } else {
+                alert('Silakan isi semua kolom!');
+            }
+        });
+    } else {
+        console.error('Contact form elements not found');
+    }
+});
+</script>
