@@ -124,6 +124,13 @@
                 <img class="product-image" src="gambar/coklat.jpeg" alt="Cokmelet">
                 <h3>Cokmelet (Risol Coklat)</h3>
                 <p>Rp7.000/pcs</p>
+                <div class="star-rating mt-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="text-sm">4/5</span>
+                </div>
                 <div class="quantity-control" data-product="Cokmelet" data-price="7000">
                     <button class="quantity-btn minus">-</button>
                     <span class="quantity">0</span>
@@ -778,6 +785,26 @@ body {
     margin: 0.5rem 0;
 }
 
+.star-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* Consistent spacing between stars */
+    padding: 4px;
+    border-radius: 4px;
+}
+.star-rating i {
+    color: #FFD700; /* Gold color for stars */
+    font-size: 16px;
+}
+.star-rating.five {
+    background: #FFF7E6; /* Subtle background for 5-star ratings */
+}
+.star-rating .text-sm {
+    margin-left: 8px; /* Space between stars and rating text */
+    color: #4B5563; /* Match Tailwind's text-gray-600 */
+}
+    
 /* Categories styling */
 .categories-container {
     text-align: center;
