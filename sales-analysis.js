@@ -50,7 +50,7 @@ const menuItems = {
 
 // Initialize Firebase
 function initializeFirebase() {
-  const firebaseConfig = {
+ const firebaseConfig = {
     apiKey: "AIzaSyDNZMUSfNZDI39VdfTddg3_W72RSPZoayk",
     authDomain: "solyummy.firebaseapp.com",
     databaseURL: "https://solyummy-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -70,9 +70,9 @@ function initializeFirebase() {
     dbRef.once('value', snapshot => {
       const data = snapshot.val();
       if (data) {
-        salesData = Object.values(data).filter(item => item.orderNo && !isNaN(item.orderNo));
+        salesData = Object.values(data).filter(item => item.orderNo && !isNaN(item.orderNo) && item.orderNo > 0);
         orderNumber = salesData.length > 0 ? Math.max(...salesData.map(item => item.orderNo)) + 1 : 1;
-        if (isNaN(orderNumber)) {
+        if (isNaN(orderNumber) || orderNumber <= 0) {
           console.warn('Invalid orderNo values detected. Resetting orderNumber to 1.');
           orderNumber = 1;
         }
@@ -115,7 +115,8 @@ function isValidSale(sale) {
     typeof sale.quantity === 'number' && sale.quantity > 0 &&
     typeof sale.price === 'number' && !isNaN(sale.price) &&
     typeof sale.total === 'number' && !isNaN(sale.total) &&
-    typeof sale.totalQuantity === 'number' && !isNaN(sale.totalQuantity)
+    typeof sale.totalQuantity === 'number' && !isNaN(sale.totalQuantity) &&
+    typeof sale.subtotal === 'number' && !isNaN(sale.subtotal)
   );
 }
 
@@ -160,6 +161,7 @@ function initSalesTracking() {
       const purchaseDate = getFormattedDate();
       const purchaseTime = getFormattedTime();
       const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+      const subtotal = cartItems.reduce((sum, item) => sum + item.total, 0);
       const currentOrderNo = orderNumber++;
       
       // Validate orderNo
@@ -179,7 +181,8 @@ function initSalesTracking() {
           quantity: cartItem.quantity,
           price: cartItem.price,
           total: cartItem.total,
-          totalQuantity: totalQuantity
+          totalQuantity: totalQuantity,
+          subtotal: subtotal
         };
         
         // Validate sale object
@@ -255,7 +258,7 @@ function generateExcel() {
   // Fetch all sales data from Firebase
   dbRef.once('value', snapshot => {
     const data = snapshot.val();
-    salesData = data ? Object.values(data).filter(item => item.orderNo && !isNaN(item.orderNo)) : [];
+    salesData = data ? Object.values(data).filter(item => item.orderNo && !isNaN(item.orderNo) && item.orderNo > 0) : [];
 
     // Group sales by orderNo for Excel display
     const groupedSales = salesData.reduce((acc, item) => {
@@ -265,6 +268,7 @@ function generateExcel() {
           date: item.date,
           time: item.time,
           userName: item.userName || 'Unknown',
+          subtotal: item.subtotal || 0,
           items: [],
           totalQuantity: item.totalQuantity
         };
@@ -280,7 +284,7 @@ function generateExcel() {
 
     // Prepare data for Excel
     const excelData = [
-      ['No', 'Date of Purchase', 'Time of Purchase', 'User Name', 'Item Purchased', 'Quantity', 'Price (Rp)', 'Total (Rp)', 'Total Quantity']
+      ['No', 'Date of Purchase', 'Time of Purchase', 'User Name', 'Item Purchased', 'Quantity', 'Price (Rp)', 'Total (Rp)', 'Subtotal (Rp)', 'Total Quantity']
     ];
 
     Object.values(groupedSales).forEach(order => {
@@ -294,6 +298,7 @@ function generateExcel() {
           item.quantity,
           item.price,
           item.total,
+          index === 0 ? order.subtotal : '', // Only show subtotal for first item
           index === 0 ? order.totalQuantity : ''
         ]);
       });
@@ -317,7 +322,7 @@ function generateExcel() {
       ['Date', 'Total Quantity', 'Total Purchase (Rp)'],
       ...Object.entries(dailyTotals).map(([date, data]) => [date, data.quantity, data.total]),
       [], // Empty row
-      ['', '', '', '', '', '', '', 'Overall Total Purchase (Rp)', overallTotal]
+      ['', '', '', '', '', '', '', '', 'Overall Total Purchase (Rp)', overallTotal]
     );
     
     // Create workbook and worksheet
@@ -335,6 +340,7 @@ function generateExcel() {
       { wch: 10 },  // Quantity
       { wch: 15 },  // Price
       { wch: 15 },  // Total
+      { wch: 15 },  // Subtotal
       { wch: 15 }   // Total Quantity
     ];
     ws['!cols'] = colWidths;
