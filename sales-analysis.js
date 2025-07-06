@@ -50,7 +50,7 @@ const menuItems = {
 
 // Initialize Firebase
 function initializeFirebase() {
- const firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyDNZMUSfNZDI39VdfTddg3_W72RSPZoayk",
     authDomain: "solyummy.firebaseapp.com",
     databaseURL: "https://solyummy-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -304,25 +304,47 @@ function generateExcel() {
       });
     });
 
-    // Calculate overall total and daily totals
-    const overallTotal = salesData.reduce((sum, item) => sum + (item.total || 0), 0);
+    // Calculate daily totals with product breakdown
     const dailyTotals = salesData.reduce((acc, item) => {
       if (!acc[item.date]) {
-        acc[item.date] = { total: 0, quantity: 0 };
+        acc[item.date] = { total: 0, quantity: 0, products: {} };
       }
       acc[item.date].total += item.total || 0;
       acc[item.date].quantity += item.quantity || 0;
+      acc[item.date].products[item.item] = (acc[item.date].products[item.item] || 0) + item.quantity;
       return acc;
     }, {});
 
-    // Add daily totals and overall total
+    // Calculate overall product totals
+    const overallProductTotals = salesData.reduce((acc, item) => {
+      acc[item.item] = (acc[item.item] || 0) + item.quantity;
+      return acc;
+    }, {});
+
+    // Calculate overall total purchase
+    const overallTotal = salesData.reduce((sum, item) => sum + (item.total || 0), 0);
+
+    // Add daily totals with product breakdown
     excelData.push(
       [], // Empty row
       ['Daily Totals'],
-      ['Date', 'Total Quantity', 'Total Purchase (Rp)'],
-      ...Object.entries(dailyTotals).map(([date, data]) => [date, data.quantity, data.total]),
+      ['Date', 'Total Quantity', 'Total Purchase (Rp)', 'Products Sold']
+    );
+    Object.entries(dailyTotals).forEach(([date, data]) => {
+      const productBreakdown = Object.entries(data.products)
+        .map(([item, qty]) => `${item}: ${qty}`)
+        .join(', ');
+      excelData.push([date, data.quantity, data.total, productBreakdown]);
+    });
+
+    // Add overall total with product breakdown
+    excelData.push(
       [], // Empty row
-      ['', '', '', '', '', '', '', '', 'Overall Total Purchase (Rp)', overallTotal]
+      ['Overall Total'],
+      ['', '', 'Overall Total Purchase (Rp)', overallTotal],
+      ['', '', 'Products Sold', Object.entries(overallProductTotals)
+        .map(([item, qty]) => `${item}: ${qty}`)
+        .join(', ')]
     );
     
     // Create workbook and worksheet
